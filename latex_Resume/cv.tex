@@ -1,0 +1,228 @@
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%	
+%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+%	THE SOFTWARE.
+%	
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
+\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\hypersetup{colorlinks,breaklinks,urlcolor=black,linkcolor=linkcolour}
+\addbibresource{citations.bib}
+\setlength\bibitemsep{1em}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	TITLE
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{Razie Hyria} \\[7.5pt]
+\href{https://github.com/raziehyria}{\raisebox{-0.05\height}\faGithub\ raziehyria} \ $|$ \ 
+\href{https://www.linkedin.com/in/razie-hyria/}{\raisebox{-0.05\height}\faLinkedin\ razie-hyria} \ $|$ \ 
+\href{}{\raisebox{-0.05\height}\faHome \ Philadelphia, PA} \ $|$ \ 
+\href{rhyriacs@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ rhyriacs@gmail.com} \ $|$ \ 
+\href{}{\raisebox{-0.05\height}\faMobile \ +267-250-8889} \\
+\end{tabularx}
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%--------------------------------------------------------------------------
+%Interests/ Keywords/ Summary
+\vspace*{-2 mm}
+\section{\large Summary}
+Diligent College Student well-versed in software development and testing protocols. Strong communicator and multitasker with an organized, detail-oriented approach.
+\vspace*{-2 mm}
+\section{\large Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Swarm AI Rover} & \hfill Spring 2023 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]  
+    \setlength{\itemindent}{.2in}
+        \item Liaising with Lockheed Martin and collecting feedback on the product.
+        \item Served as the Product Manager of the Senior Engineering Capstone project.
+        \item Led and communicated the project vision to over 20 members using agile methodologies.
+        \item Collaborated with the development team to ensure the product was built according to specifications.
+        \vspace*{-3 mm}
+\end{itemize}
+\end{minipage}}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Maze-solving Robot} & \hfill Fall 2022 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2.5pt]
+        \setlength{\itemindent}{.2in}
+        \item Built an Artificial intelligence robotic agent. 
+        \item Programmed to traverse, solve and optimize the path of a 2D Mazes using the left-hand rule.
+        \item Featured Arduino circuits, ESP-32 camera, servomotors, sensors, Python, and C.
+        \vspace*{2.5mm}
+    \end{itemize}
+    \end{minipage}}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Movie Recommendation App} & \hfill Fall 2022 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2.5pt]
+        \setlength{\itemindent}{.2in}
+        \item Python-based app using API, Trees, GUI’s, Databases, and user-input to relay information.
+    \end{itemize}
+    \end{minipage}}
+\end{tabularx}
+%Experience
+\vspace*{-4mm}
+\section{\large Work Experience}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Software Testing Intern} \textit{Precision Systems Inc.} & \hfill Sep, 2021 - May, 2022  \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2.5pt]
+    \setlength{\itemindent}{.2in}
+        \item Collaborated with two senior developers to create unit tests for large-scale Python Projects. 
+        \item Hands-on experience with Azure, Git, Docker, and AWS in an agile-based environment.
+        \item Pioneered software testing role alongside company executives and quality assurance team.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Camp Instructor} \textit{International Ivy Summer STEM Program} & \hfill June 2021 - Aug 2021\\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2.5pt]
+    \setlength{\itemindent}{.2in}
+        \item Taught through class discussions, and project-based challenges with Python, Scratch, and HTML.
+        \item Coordinated engaging activities and supervised five 9 to 11-year-old campers per weekly session.
+        \item Discussed common data types such as lists, operators, strings, and functions.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+%---------------------------------------------------------------------------
+%	EDUCATION
+%---------------------------------------------------------------------------
+
+\vspace*{-1mm}
+\section{\large Education}
+\begin{tabularx}{\linewidth}[topsep=20pt,itemsep=0pt,parsep=0pt,partopsep=0pt]{@{}l r@{}}	
+\textbf{Pennsylvania State University} \textit{B.S in Computer Science}  & \hfill (GPA: 3.2)\\[2pt]
+\multicolumn{2}{@{}X@{}}{\textbf{Relevant Coursework:}  Data Structures; Machine Learning; Operating Systems; Electronic Circuit Design; Digital Systems; Computer Architecture; Discrete Math; Calculus I, II, III; Physics I, II; Object-Oriented Programming; Software Engineering and Design; Software Testing}
+\end{tabularx} 
+\section{\large Languages and Technologies}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{C/C++; Python; HTML; CSS; React; Javascript; SQL; VSCode; NLP; VMware; Arduino; Microsoft Office; OS; Figma; Docker; Amazon Web Services; Fluent in Albanian and English.}
+\vspace*{-2mm}
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%	SKILLS
+%----------------------------------------------------------------------------------------
+\vspace*{-1mm}
+\section{\large Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+Test Plans and Test Methodologies &  \normalsize{Project Management} \\
+Collaborative Team Player  &  \normalsize{Developing Quality Standards}
+\vspace*{-1mm}
+\end{tabularx}
+\vfill
+\end{document}
